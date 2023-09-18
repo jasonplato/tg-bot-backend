@@ -6,7 +6,7 @@ const sequelize = new Sequelize('game_db', 'root', '123456', {
 	dialect: 'mysql',
 	port: 33006,
 	define: {
-		timestamps: false
+		freezeTableName: true,
 	},
 
 	pool: {

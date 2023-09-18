@@ -1,3 +1,5 @@
+const db = require('./database/db')
+
 var express = require('express')
 var bodyParser = require('body-parser')
 
@@ -20,6 +22,7 @@ app.use('/api', users)
 // app.use('/api', mails)
 // app.use('/api', models)
 
-app.listen(port, () => {
-	console.log('Server started on port ' + port)
+app.listen(port, async () => {
+	console.log('Server started on port ' + port);
+	await  db.sequelize.sync({ alter: true });
 })

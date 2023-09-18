@@ -2,7 +2,9 @@ CREATE DATABASE game_db;
 use game_db;
 
 CREATE TABLE IF NOT EXISTS users (
-        _id INT AUTO_INCREMENT PRIMARY KEY,
-        _username VARCHAR(64) NOT NULL, 
-        _time VARCHAR(32)
+        tg_id VARCHAR(16) PRIMARY KEY NOT NULL,
+        tg_name VARCHAR(64), 
+        wallet_connected BOOLEAN,
+        wallet_addr VARCHAR(64),
+        first_time DATE,
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

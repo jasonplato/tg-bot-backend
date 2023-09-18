@@ -1,22 +1,25 @@
-const Sequelize = require('sequelize')
+const { Sequelize, DataTypes} = require('sequelize')
 const db = require('../database/db.js')
 
 module.exports = db.sequelize.define(
 	'users',
 	{
-		_id: {
-			type: Sequelize.INTEGER,
+		tg_id: {
+			type: DataTypes.STRING,
 			primaryKey: true,
-			autoIncrement: true
+			allowNull: false
 		},
-		_username: {
-			type: Sequelize.STRING
+		tg_name: {
+			type: DataTypes.STRING
 		},
-		_time: {
-			type: Sequelize.DATE
-		}
+		wallet_connected: {
+			type: DataTypes.BOOLEAN
+		},
+		wallet_addr: {
+			type: DataTypes.STRING
+		},
 	},
 	{
-		timestamp: false
+		timestamp: true
 	}
 )
